@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
+import './table.scss';
 
 class Table extends Component {
   state = { 
-    head: this.props.head, 
-    data: this.props.data,
-    parentClass: this.props.parentClass
+    head: this.props.head || [], 
+    data: this.props.data || []
   }
   render() {
     return (
-      <table className={ this.state.parentClass || 'table' }>
+      <table className={ (!this.props.disableStyles ? "table " : "") + this.props.parentClass }>
         <thead>
 
           {/* Loop around prop.head items and create table head rows */}
@@ -27,9 +27,9 @@ class Table extends Component {
             <tr key={ key }>
 
               {/* If data item matches prop.head item return item */}
-              { this.state.head.map((heading) =>
-                <td key={ this.state.data[key][heading.toLowerCase()] }>
-                  { this.state.data[key][heading.toLowerCase()] }
+              { this.state.head.map((heading, index) =>
+                <td key={ this.state.data[key][heading.toLowerCase()] || index }>
+                  { this.state.data[key][heading.toLowerCase()] || this.props.placeholder }
                 </td>
                 )
               }
