@@ -24,16 +24,7 @@ module.exports = {
                 'sass-loader'
             ]
         })
-      },
-      {
-        test: /\.scss$/,
-        include: paths.appSrc,
-        loaders: [
-          require.resolve('style-loader'),
-          require.resolve('css-loader'),
-          require.resolve('sass-loader')
-        ]
-      },
+      }
     ]
   },
   externals: {
