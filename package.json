@@ -1,5 +1,5 @@
 {
-  "name": "retable",
+  "name": "dynamic-react-table",
   "version": "0.0.1",
   "description": "Dynamic table component built for React",
   "main": "build/index.js",
